@@ -23,7 +23,7 @@ mod platform {
     use rustls::RootCertStore;
     pub fn load_native_certs() -> Result<RootCertStore, ::std::convert::Infallible> {
         let mut store = RootCertStore::empty();
-        store.add_server_trust_anchors(webpki_roots::TLS_SERVER_ROOTS);
+        store.add_server_trust_anchors(&webpki_roots::TLS_SERVER_ROOTS);
         Ok(store)
     }
 }
